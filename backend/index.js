@@ -1,8 +1,9 @@
 const express = require("express");
 const app = express();
-const prob = require("./Problem/problem.route");
+const prob = require("./routes/problem.route");
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const cors = require('cors');
 
 dotenv.config();
 
@@ -11,6 +12,7 @@ mongoose.connect(process.env.MONGO_URI,()=>{
 })
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(cors());
 
 const PORT = process.env.PORT || 5000;
 

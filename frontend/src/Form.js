@@ -1,5 +1,5 @@
 import React from 'react';
-
+import axios from 'axios';
 export default class Form extends React.Component {
     state = {
         username: '',
@@ -16,6 +16,10 @@ export default class Form extends React.Component {
     onSubmit = (e) => {
         e.preventDefault();
         this.props.onSubmit(this.state)
+        axios.get('http://localhost:5000/problem/')
+        .then(resp=>console.log(resp))
+        .catch(err=>
+            console.log(err))
         this.setState({
             username: '',
             subject: '',

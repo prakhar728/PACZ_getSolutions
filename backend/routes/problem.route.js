@@ -1,5 +1,5 @@
 const express = require("express");
-const Problem = require("./problem.model");
+const Problem = require("../models/problem.model");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
