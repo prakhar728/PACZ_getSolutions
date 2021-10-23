@@ -12,7 +12,8 @@ function Form() {
         const data ={
             title:title,
             description:body,
-            flair:tags
+            flair:tags,
+            visibility:anonymous,
         }
         axios.post('http://localhost:5000/problem/newProblem',data)
         .then(resp=>console.log(resp))
