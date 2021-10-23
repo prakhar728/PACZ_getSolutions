@@ -12,8 +12,14 @@ const problem = new mongoose.Schema({
   flair: {
     type: String,
     required: true,
- },
+  },
+  comments: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Comment",
+      required: true
+    }
+  ]
 });
 
-
-module.exports = mongoose.model('Problem', problem)
+module.exports = mongoose.model("Problem", problem);
