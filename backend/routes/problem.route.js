@@ -13,6 +13,7 @@ router.post("/newProblem", async (req, res) => {
     title: req.body.title,
     description: req.body.description,
     flair: req.body.flair,
+    visibility: req.body.visibility,
   });
   try {
     const savedNow = await newProblem.save();
