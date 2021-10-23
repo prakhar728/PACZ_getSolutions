@@ -1,14 +1,11 @@
 import './App.css';
-import Title from './Title';
-import './Title.css'
-import Form from './Form'
-import './Form.css'
+import Title from './components/Header/Title.js';
+import Form from './components/Form/Form';
 import { Component } from 'react';
 import axios from 'axios';
 
 //function App() {
 class App extends Component {
-
   state = {
     posts: [],
   }
@@ -35,7 +32,6 @@ class App extends Component {
 
   displayPosts = (posts) => {
     if (!posts.length) return null;
-
     return posts.map((post, index) => (
       <div key={index}>
         <h3>{post.subject}</h3>
