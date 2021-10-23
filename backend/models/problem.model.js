@@ -23,8 +23,7 @@ const problem = new mongoose.Schema({
   },
   comments: [
     {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Comment",
+      type: Array,
     },
   ],
 });

@@ -39,17 +39,12 @@ router.delete("/:_id", async (req, res) => {
 
 router.post("/:_id/comment", async (req, res) => {
   const getPost = await Problem.findById(req.params._id);
-
-  const comment = new Comment({
-    name: req.body.name,
-    content: req.body.content,
-  });
-
   try {
-    const saveComment = await comment.save();
-    const commentUnderPost = getPost.comments.push(comment._id);
+    const commentUnderPost = getPost.comments.push(req.body.content);
+    console.log(getPost.comments);
     const savePost = await getPost.save();
-    res.send(comment);
+    console.log(savePost);
+    res.send('Submitted!');
   } catch (err) {
     console.error(err.message);
     res.send(err);

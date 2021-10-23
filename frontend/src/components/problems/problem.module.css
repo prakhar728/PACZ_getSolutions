@@ -1,0 +1,8 @@
+.problemHeading{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width:100%;
+    border:2px solid black;
+}
