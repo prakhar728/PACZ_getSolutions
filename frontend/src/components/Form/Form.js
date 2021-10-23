@@ -8,6 +8,7 @@ function Form() {
     const [anonymous, setanonymous] = useState(false)
 
     const handleSubmit = (e) => {
+        const x = localStorage.getItem('userId');
         e.preventDefault();
         const data ={
             title:title,
@@ -15,7 +16,11 @@ function Form() {
             flair:tags,
             visibility:anonymous,
         }
-        axios.post('http://localhost:5000/problem/newProblem',data)
+
+        axios.post('http://localhost:5000/problem/newProblem',data,{
+            headers:{
+            'userid':x
+        }})
         .then(resp=>console.log(resp))
         .catch(err=>console.log(err))
     };

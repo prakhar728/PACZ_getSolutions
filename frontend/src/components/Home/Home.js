@@ -24,9 +24,8 @@ function Home() {
                     <h3>{post.title}</h3>
                     <p>{post.description}</p>
                     <p>Tags:{post.flair}</p>
-                    <p>{post.visibility}</p>
                     <p>{post.comments}</p>
-
+                    <p>{post.userid}</p>
                 </div>
             ))
     }

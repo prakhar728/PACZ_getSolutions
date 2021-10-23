@@ -18,7 +18,7 @@ function Login() {
             // Add a callback here to handle the payload sent by sdk
             onSuccess: (payload) => {
                 localStorage.setItem('userId',payload.user_id);
-                history.push('/form')
+                history.push('/home')
             },
         };
         let Sawo = new sawo(config)

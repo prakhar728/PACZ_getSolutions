@@ -9,11 +9,14 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/newProblem", async (req, res) => {
+  if(req.headers.userid)
+  console.log(req.headers.userid);
   const newProblem = new Problem({
     title: req.body.title,
     description: req.body.description,
     flair: req.body.flair,
     visibility: req.body.visibility,
+    userid:req.headers.userid
   });
   try {
     const savedNow = await newProblem.save();
