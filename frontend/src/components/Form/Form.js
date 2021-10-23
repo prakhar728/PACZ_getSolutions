@@ -21,7 +21,14 @@ function Form() {
             headers:{
             'userid':x
         }})
-        .then(resp=>console.log(resp))
+        .then(resp=>{console.log(resp["data"]);
+                    if(resp["data"]=='Submitted!')
+                    {alert('Congrats! Problem Submitted')
+                window.location.href='/home'
+                }
+                    else
+                    alert('Failed!')
+    })
         .catch(err=>console.log(err))
     };
     useEffect(() => {

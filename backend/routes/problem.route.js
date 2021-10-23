@@ -20,10 +20,10 @@ router.post("/newProblem", async (req, res) => {
   });
   try {
     const savedNow = await newProblem.save();
-    res.send(savedNow._id);
+    res.send('Submitted!');
   } catch (error) {
     console.log(error);
-    res.send(error);
+    res.send('Could not submit!');
   }
 });
 

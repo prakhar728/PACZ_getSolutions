@@ -21,7 +21,7 @@ function Home() {
         <div className={styles.home}>
             {(data == null) ? (console.log('No data recieved')) : data.map((post, index) => (
                 <div key={index} className={styles.problemCard}>
-                    <h3>{post.title}</h3>
+                    <h3><a href={`http://localhost:3000/problem/${post._id}`} >{post.title}</a></h3>
                     <p>{post.description}</p>
                     <p>Tags:{post.flair}</p>
                     <p>{post.comments}</p>

@@ -4,6 +4,7 @@ import { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Login from './components/Login/Login';
 import Home from './components/Home/Home';
+import Problem from './components/problems/Problem';
 
 //function App() {
 class App extends Component {
@@ -18,7 +19,6 @@ class App extends Component {
               </li>
               <li>
               <Link to='/form'>Problem</Link>
-
               </li>
             </ul>
             <div className="Title">
@@ -34,6 +34,9 @@ class App extends Component {
             </Route>
             <Route exact path='/home'>
               <Home />
+            </Route>
+            <Route path='/problem/:id'>
+              <Problem/>
             </Route>
           </Switch>
         </div>

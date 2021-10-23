@@ -15,6 +15,9 @@
     align-items: center;
     min-height: 90vh;
 }
+.home a{
+    color:black;
+}
 .problemCard{
     border:2px solid black;
     display: flex;
