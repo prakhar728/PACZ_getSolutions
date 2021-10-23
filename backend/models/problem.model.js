@@ -13,13 +13,17 @@ const problem = new mongoose.Schema({
     type: String,
     required: true,
   },
+  visibility: {
+    type: Boolean,
+    required: true,
+  },
   comments: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Comment",
-      required: true
-    }
-  ]
+      required: true,
+    },
+  ],
 });
 
 module.exports = mongoose.model("Problem", problem);
