@@ -23,7 +23,8 @@ function Login() {
    
     return (
         <div className={styles.sawoContainer}>
-            <div id="sawo-container"  style={{height:"300px", width:"400px"}}></div> 
+            <div className={styles.header} >PASSWORD-LESS AUTH</div>
+            <div id="sawo-container" style={{height:"300px", width:"400px"}}></div> 
        </div>
     )
 }
