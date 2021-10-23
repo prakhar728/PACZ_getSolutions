@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react';
 import axios from 'axios';
 import {useHistory} from 'react-router-dom';
 import styles from './problem.module.css';
+
 function Problem() {
     const history = useHistory();
     const [data, setdata] = useState(null);

@@ -50,30 +50,4 @@ router.post("/:_id/comment", async (req, res) => {
     res.send(err);
   }
 });
-
-router.get("/:_id/comment", async (req, res) => {
-  const post = await Problem.findById(req.params._id).populate("comments");
-  res.send(post);
-});
-
-router.put("/comment/:commentId", async (req, res) => {
-  try {
-    const updateComment = await Comment.findByIdAndUpdate(req.params.commentId);
-    res.send(updateComment);
-  } catch (err) {
-    console.error(err.message);
-    res.send(err.message);
-  }
-});
-
-router.delete("/comment/:commentId", async (req, res) => {
-  try {
-    const delComment = await Comment.findByIdAndDelete(req.params.commentId);
-    res.redirect("/problem");
-  } catch (err) {
-    console.error(err.message);
-    res.send(err.message);
-  }
-});
-
 module.exports = router;

@@ -8,6 +8,7 @@ function Home() {
             .then((response) => {
                 const dataRecieved = response.data;
                 setdata(dataRecieved);
+                console.log(dataRecieved);
                 console.log('Data has been received!!');
             })
             .catch(() => {
@@ -22,10 +23,9 @@ function Home() {
             {(data == null) ? (console.log('No data recieved')) : data.map((post, index) => (
                 <div key={index} className={styles.problemCard}>
                     <h3><a href={`http://localhost:3000/problem/${post._id}`} >{post.title}</a></h3>
-                    <p>{post.description}</p>
-                    <p>Tags:{post.flair}</p>
-                    <p>{post.comments}</p>
-                    <p>{post.userid}</p>
+                    <p>Description:{post.description}</p>
+                    <p>Category:{post.flair}</p>
+                    <p>By:{!post.visibility?post.userid:'Anonymous'}</p>
                 </div>
             ))
     }
