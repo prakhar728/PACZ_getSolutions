@@ -1,18 +1,30 @@
 import './App.css';
-import Title from './components/Header/Title.js';
 import Form from './components/Form/Form';
 import { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Login from './components/Login/Login';
 import Home from './components/Home/Home';
 
 //function App() {
 class App extends Component {
-   render() {
+  render() {
     return (
-      <div className="App">
-        <Title />
-        <Router>
+      <Router>
+        <div >
+          <nav className="headerContainer">
+            <ul>
+              <li>
+                <Link to='/home'>Home</Link>
+              </li>
+              <li>
+              <Link to='/form'>Problem</Link>
+
+              </li>
+            </ul>
+            <div className="Title">
+              <h1>MindSpace</h1>
+            </div>
+          </nav>
           <Switch>
             <Route exact path='/'>
               <Login />
@@ -24,8 +36,9 @@ class App extends Component {
               <Home />
             </Route>
           </Switch>
-        </Router>
-      </div>
+        </div>
+      </Router>
+
     );
   }
 }
