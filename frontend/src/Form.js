@@ -31,7 +31,7 @@ export default class Form extends React.Component {
     render() {
         return (
             <form>
-                <input 
+                <input class="form__input"
                     name="username"
                     placeholder="username"
                     value={this.state.username} 
@@ -39,14 +39,14 @@ export default class Form extends React.Component {
                     onChange={e => this.setState({ username: e.target.value })}
                 />
                 <br />
-                <input 
+                <input class="form__input"
                     name="subject"
                     placeholder="subject"
                     value={this.state.subject} 
                     onChange={e => this.setState({ subject: e.target.value })}
                 />
                 <br />
-                <input 
+                <input class="form__input"
                     name="body"
                     placeholder="body"
                     value={this.state.body} 
@@ -62,7 +62,7 @@ export default class Form extends React.Component {
                 <label for="Post Anonymously">Post Anonymously</label>
                 <br />
 
-                <button onClick={e => this.onSubmit(e)}>Submit</button>
+                <button class="form__button" onClick={e => this.onSubmit(e)}>Submit</button>
             </form>
         );
     }
