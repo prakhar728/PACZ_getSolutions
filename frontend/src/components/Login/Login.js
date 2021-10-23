@@ -2,8 +2,11 @@ import React, { useEffect } from 'react'
 import sawo from 'sawo';
 import dotenv from 'dotenv';
 import styles from './Login.module.css';
+import {useHistory} from 'react-router-dom';
+
 dotenv.config({path:'/home/prakharojha/Desktop/ME/PACZ_getSolutions/frontend/.env'});
 function Login() {
+    const history = useHistory();
     useEffect(() => {
         var config = {
             // should be same as the id of the container created on 3rd step
@@ -14,7 +17,8 @@ function Login() {
             apiKey: process.env.REACT_APP_SAWO_URI,
             // Add a callback here to handle the payload sent by sdk
             onSuccess: (payload) => {
-                console.log(payload);
+                localStorage.setItem('userId',payload.user_id);
+                history.push('/form')
             },
         };
         let Sawo = new sawo(config)

@@ -1,6 +1,6 @@
 import React, { useState,useEffect} from 'react';
 import axios from 'axios';
-
+import styles from './Form.module.css'; 
 function Form() {
     const [title, settitle] = useState('');
     const [body, setbody] = useState('');
@@ -26,18 +26,21 @@ function Form() {
     }, []);
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
+        <div className={styles.Form}>
+            <form onSubmit={handleSubmit} >
+            <h1>Post your problems here!</h1>
                 <input
                     name="title"
                     placeholder="Title of Problem"
                     value={title}
+                    className={styles.form__input}
                     onChange={e => settitle(e.target.value)}
                 />
                 <br />
                 <input
                     name="body"
                     placeholder="Describe your problem"
+                    className={styles.form__input}
                     value={body}
                     onChange={e => setbody(e.target.value)}
                 />
@@ -45,6 +48,7 @@ function Form() {
                 <input
                     name="tag"
                     placeholder="Add relevant Tags"
+                    className={styles.form__input}
                     value={tags}
                     onChange={e => settags(e.target.value)}
                 />
@@ -56,7 +60,7 @@ function Form() {
                 />
                 <label for="Post Anonymously">Post Anonymously</label>
                 <br />
-                <button type="submit">Submit</button>
+                <button type="submit" className={styles.form__button}>Submit</button>
             </form>
         </div>
     )
