@@ -1,9 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
 import Title from './Title';
 import './Title.css'
 import Form from './Form'
+import './Form.css'
 import { Component } from 'react';
+import axios from 'axios';
 
 //function App() {
 class App extends Component {
