@@ -22,6 +22,30 @@ function Home() {
         <div className={styles.home}>
             {(data == null) ? (<h1>No Problems Yet!</h1>) : data.map((post, index) => (
                 <div key={index} className={styles.problemCard}>
+                    <h3 className={styles.problemTitle}><a href={`http://localhost:3000/problem/${post._id}`} >{post.title}</a></h3>
+                    <p className={styles.problemParagraph}>{post.description}</p>
+                    <p className={styles.problemTag}>Tags:{post.flair}</p>
+                    
+                    <p>{post.userid}</p>
+                </div>
+            ))
+    }
+        </div>
+        </div>
+        </>
+    )
+}
+export default Home
+           alert('Data has not been received!!'); //change to error catch
+            });
+
+    }, [])
+    return (
+        <>
+        <div className={styles.homeContainer}>
+        <div className={styles.home}>
+            {(data == null) ? (<h1>No Problems Yet!</h1>) : data.map((post, index) => (
+                <div key={index} className={styles.problemCard}>
                     <h3><a href={`http://localhost:3000/problem/${post._id}`} >{post.title}</a></h3>
                     <p>Description:{post.description}</p>
                     <p>Category:{post.flair}</p>

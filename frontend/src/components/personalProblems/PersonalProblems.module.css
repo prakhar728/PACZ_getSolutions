@@ -1,0 +1,46 @@
+.homeContainer{
+    background: url('../../public/background.jpg');
+    height:90vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    overflow-y: scroll;
+}
+.home{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    min-height: 90vh;
+}
+.home a{
+    color:black;
+}
+.problemCard{
+    border:2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: left;
+    padding: 1.0em ;
+    width:40vw;
+    height:20vh;
+    margin:10px;
+    background: rgba(255, 255, 255, 0.411);
+}
+.problemCard h3{
+    text-transform: capitalize;
+
+}
+
+.problemParagraph {
+    border: 1px dashed blue;
+    font-size: 16px;
+    align-items: left;
+    width: 30vw;
+    height: 10vh;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+}
