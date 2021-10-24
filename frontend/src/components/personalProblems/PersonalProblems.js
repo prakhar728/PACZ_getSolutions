@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react';
+import styles from './PersonalProblems.module.css';
 import axios from 'axios';
 
 
@@ -19,17 +20,19 @@ function PersonalProblems() {
         
     }, [])
     return (
-        <div>
-            These are the problems that you have Posted!
+        <div className={styles.homeContainer}>
+            <div className={styles.home}>
+            <h2>These are the problems that you have Posted!</h2>
             {(data == null) ? (<h1>No Problems Yet!</h1>) : data.map((post, index) => (
-                <div key={index} >
+                <div key={index} className={styles.problemCard}>
                     <h3><a href={`http://localhost:3000/problem/${post._id}`} >{post.title}</a></h3>
-                    <p>Description:{post.description}</p>
+                    <p className={styles.problemParagraph}>Description:{post.description}</p>
                     <p>Category:{post.flair}</p>
                     <p>Visibility:{post.visibility?'anonymous':'not anonymous'}</p>
                 </div>
             ))
     }
+        </div>
         </div>
     )
 }
