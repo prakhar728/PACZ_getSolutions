@@ -41,26 +41,30 @@ function Problem() {
         .catch(err=>console.log(err))
     };
     return (
-        <div>
+        <div className={styles.homeContainer}>
             {(data===null  )?<h2>No such problem exists</h2>:
             (
-                <div className={styles.problemHeading}> 
-                <h3>{data.description}</h3>
-                <h3>{data.flair}</h3>
+                <div className={styles.home}>
+                    <div className={styles.problemCard}> 
                 <h3>{data.title}</h3>
+                <p className={styles.problemParagraph}>{data.description}</p>
+                <p>{data.flair}</p>
+                </div>
                 </div>
                 
             )
             }
-            <h1>Comments</h1>
+            <div className={styles.commentSection}>
+            <h1 className={styles.commentsHeader}>Comments</h1>
             {(data===null||data.comments===[] || data.comments.length===0 )?<h2>No comments to show</h2>:
             (data.comments.map((comment,index)=>(
                     <div key={index}>
-                        <h3>{comment}</h3>
+                        <h3 className={styles.comments}>{comment}</h3>
                             </div>
                 ))
             )
             }
+            </div>
             <form onSubmit={handleSubmit} >
                 <input
                     name="Comment"

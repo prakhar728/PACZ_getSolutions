@@ -25,8 +25,8 @@ function Home() {
                     <h3 className={styles.problemTitle}><a href={`http://localhost:3000/problem/${post._id}`} >{post.title}</a></h3>
                     <p className={styles.problemParagraph}>{post.description}</p>
                     <p className={styles.problemTag}>Tags:{post.flair}</p>
-                    <p>{post.comments}</p>
-                    <p>{post.userid}</p>
+                    
+                    <p>By:{!post.visibility?post.userid:'Anonymous'}</p>
                 </div>
             ))
     }

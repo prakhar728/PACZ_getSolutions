@@ -35,16 +35,19 @@
 
 }
 
-.problemTitle {
-    
-}
-
-.problemTag {
-    
-}
-
 .problemParagraph {
-    border-style: inset;
+    border: 1px dashed blue;
+    font-size: 16px;
+    align-items: left;
+    width: 30vw;
+    height: 10vh;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+}
+
+.commentParagraph {
+    border: 1px dashed green;
+    font-size: 16px;
     align-items: left;
     width: 30vw;
     height: 10vh;
