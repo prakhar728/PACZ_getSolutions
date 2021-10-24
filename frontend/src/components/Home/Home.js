@@ -20,7 +20,7 @@ function Home() {
         <>
         <div className={styles.homeContainer}>
         <div className={styles.home}>
-            {(data == null) ? (console.log('No data recieved')) : data.map((post, index) => (
+            {(data == null) ? (<h1>No Problems Yet!</h1>) : data.map((post, index) => (
                 <div key={index} className={styles.problemCard}>
                     <h3><a href={`http://localhost:3000/problem/${post._id}`} >{post.title}</a></h3>
                     <p>Description:{post.description}</p>

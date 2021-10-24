@@ -26,7 +26,12 @@ router.post("/newProblem", async (req, res) => {
     res.send('Could not submit!');
   }
 });
-
+router.get("/ownProblems",async (req,res)=>{
+  console.log(req.headers.userid);
+  const data = await Problem.find({userid:req.headers.userid});
+  console.log(data);
+  res.send(data);
+})
 router.get("/:_id", async (req, res) => {
   const problem = await Problem.findById(req.params._id);
   res.json(problem);
@@ -50,4 +55,5 @@ router.post("/:_id/comment", async (req, res) => {
     res.send(err);
   }
 });
+
 module.exports = router;
