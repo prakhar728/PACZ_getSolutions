@@ -26,7 +26,12 @@ router.post("/newProblem", async (req, res) => {
     res.send('Could not submit!');
   }
 });
-
+router.get("/ownProblems",async (req,res)=>{
+  console.log(req.headers.userid);
+  const data = await Problem.find({userid:req.headers.userid});
+  console.log(data);
+  res.send(data);
+})
 router.get("/:_id", async (req, res) => {
   const problem = await Problem.findById(req.params._id);
   res.json(problem);
@@ -48,31 +53,6 @@ router.post("/:_id/comment", async (req, res) => {
   } catch (err) {
     console.error(err.message);
     res.send(err);
-  }
-});
-
-router.get("/:_id/comment", async (req, res) => {
-  const post = await Problem.findById(req.params._id).populate("comments");
-  res.send(post);
-});
-
-router.put("/comment/:commentId", async (req, res) => {
-  try {
-    const updateComment = await Comment.findByIdAndUpdate(req.params.commentId);
-    res.send(updateComment);
-  } catch (err) {
-    console.error(err.message);
-    res.send(err.message);
-  }
-});
-
-router.delete("/comment/:commentId", async (req, res) => {
-  try {
-    const delComment = await Comment.findByIdAndDelete(req.params.commentId);
-    res.redirect("/problem");
-  } catch (err) {
-    console.error(err.message);
-    res.send(err.message);
   }
 });
 

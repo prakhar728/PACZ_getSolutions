@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Login from './components/Login/Login';
 import Home from './components/Home/Home';
 import Problem from './components/problems/Problem';
-
+import PersonalProblems from './components/personalProblems/PersonalProblems';
 //function App() {
 class App extends Component {
   render() {
@@ -19,6 +19,9 @@ class App extends Component {
               </li>
               <li>
               <Link to='/form'>Problem</Link>
+              </li>
+              <li>
+                <Link to='/ownProblems'>My Problems</Link>
               </li>
             </ul>
             <div className="Title">
@@ -35,7 +38,10 @@ class App extends Component {
             <Route exact path='/home'>
               <Home />
             </Route>
-            <Route path='/problem/:id'>
+            <Route exact path='/ownProblems'>
+              <PersonalProblems />
+            </Route>
+            <Route exact path='/problem/:id'>
               <Problem/>
             </Route>
           </Switch>
