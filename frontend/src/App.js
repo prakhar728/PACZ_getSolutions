@@ -38,7 +38,7 @@ class App extends Component {
             <Route exact path='/home'>
               <Home />
             </Route>
-            <Route exact path='/oldProblems'>
+            <Route exact path='/ownProblems'>
               <PersonalProblems />
             </Route>
             <Route exact path='/problem/:id'>
