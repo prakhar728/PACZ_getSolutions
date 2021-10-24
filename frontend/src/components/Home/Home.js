@@ -21,9 +21,9 @@ function Home() {
         <div className={styles.home}>
             {(data == null) ? (console.log('No data recieved')) : data.map((post, index) => (
                 <div key={index} className={styles.problemCard}>
-                    <h3><a href={`http://localhost:3000/problem/${post._id}`} >{post.title}</a></h3>
-                    <p>{post.description}</p>
-                    <p>Tags:{post.flair}</p>
+                    <h3 className={styles.problemTitle}><a href={`http://localhost:3000/problem/${post._id}`} >{post.title}</a></h3>
+                    <p className={styles.problemParagraph}>{post.description}</p>
+                    <p className={styles.problemTag}>Tags:{post.flair}</p>
                     <p>{post.comments}</p>
                     <p>{post.userid}</p>
                 </div>
